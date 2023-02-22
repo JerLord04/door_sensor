@@ -2,9 +2,9 @@
 #include <ESP8266HTTPClient.h>
 #include <WiFiClient.h>
 
-const char* ssid = "Meesuk_2.4G";
-const char* password = "51552105315";
-String serverName = "http://192.168.1.7:3000/api/get_door_status";
+const char* ssid = "";
+const char* password = "";
+String serverName = "";
 
 const int door_sensor = D1;
 int oldState;
