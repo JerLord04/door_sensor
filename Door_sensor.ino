@@ -2,9 +2,9 @@
 #include <ESP8266HTTPClient.h>
 #include <WiFiClient.h>
 
-const char* ssid = "";
-const char* password = "";
-String serverName = "";
+const char* ssid = "pay before use 2.4G";
+const char* password = "11333355555577777777";
+String serverName = "http://40.81.25.86:3000/api/get_door_status";
 
 const int door_sensor = D1;
 int oldState;
@@ -33,11 +33,11 @@ void loop() {
   String txt = "";
   if (doorState == HIGH && oldState == LOW) {
     Serial.println("Door Open");
-    txt = "?door_status=door_open";
+    txt = "?door_status=door_open&room=1";
     senData(txt);
   } else if (doorState == LOW && oldState == HIGH) {
     Serial.println("Door Close");
-    txt = "?door_status=door_close";
+    txt = "?door_status=door_close&room=1";
     senData(txt);
   }
 }
